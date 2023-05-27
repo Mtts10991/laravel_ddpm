@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::group(["prefix" => "ddpm003", 'namespace' => 'App\Http\Controllers\DDPM'], function () {
+    Route::get('push_data', 'DDPM_003Controller@pushData');
+    Route::post('select_data', 'DDPM_003Controller@where_data');
+});
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
